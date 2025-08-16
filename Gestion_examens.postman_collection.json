@@ -1,0 +1,806 @@
+{
+	"info": {
+		"_postman_id": "c172cf0e-2bb5-41fa-9c80-fa7447e3480d",
+		"name": "Gestion_examens",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34860655"
+	},
+	"item": [
+		{
+			"name": "Cours",
+			"item": [
+				{
+					"name": "getCoursByFormation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/cours/formation/{formationId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cours",
+								"formation",
+								"{formationId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCoursByProfesseur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/cours/professeur/{professeurId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cours",
+								"professeur",
+								"{professeurId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCoursById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/cours/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cours",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/v1/cours",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cours"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notes",
+			"item": [
+				{
+					"name": "saisirNote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGV5ZS5jaXNzZTJAdW5pdi10aGllcy5zbiIsImlhdCI6MTc1NTI4MzYxNSwiZXhwIjoxNzU1MzcwMDE1fQ.RQTjLWUxSgaX6SZW_sxsQcrjkJ4WKryUi3oKEiu9Y0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"evaluationId\" : 17,\r\n  \"professeurId\" : 41,\r\n  \"valeur\" : 14.50,\r\n  \"etudiantId\" : 52\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/notes/saisir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								"saisir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotesParEvaluation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGV5ZS5jaXNzZTJAdW5pdi10aGllcy5zbiIsImlhdCI6MTc1NTI4MzYxNSwiZXhwIjoxNzU1MzcwMDE1fQ.RQTjLWUxSgaX6SZW_sxsQcrjkJ4WKryUi3oKEiu9Y0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notes/evaluation/17",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notes",
+								"evaluation",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotesParEtudiant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGV5ZS5jaXNzZTJAdW5pdi10aGllcy5zbiIsImlhdCI6MTc1NTI4MzYxNSwiZXhwIjoxNzU1MzcwMDE1fQ.RQTjLWUxSgaX6SZW_sxsQcrjkJ4WKryUi3oKEiu9Y0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notes/etudiant/52",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notes",
+								"etudiant",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotesParEtudiantEtCours",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGV5ZS5jaXNzZTJAdW5pdi10aGllcy5zbiIsImlhdCI6MTc1NTI4MzYxNSwiZXhwIjoxNzU1MzcwMDE1fQ.RQTjLWUxSgaX6SZW_sxsQcrjkJ4WKryUi3oKEiu9Y0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notes/etudiant/52/cours/46",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notes",
+								"etudiant",
+								"52",
+								"cours",
+								"46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "genererReleveNotes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGV5ZS5jaXNzZTJAdW5pdi10aGllcy5zbiIsImlhdCI6MTc1NTI4MzYxNSwiZXhwIjoxNzU1MzcwMDE1fQ.RQTjLWUxSgaX6SZW_sxsQcrjkJ4WKryUi3oKEiu9Y0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notes/releve/52",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notes",
+								"releve",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "supprimerNote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGV5ZS5jaXNzZTJAdW5pdi10aGllcy5zbiIsImlhdCI6MTc1NTI4MzYxNSwiZXhwIjoxNzU1MzcwMDE1fQ.RQTjLWUxSgaX6SZW_sxsQcrjkJ4WKryUi3oKEiu9Y0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notes/{noteId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notes",
+								"{noteId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Utilisateurs",
+			"item": [
+				{
+					"name": "professeurs",
+					"item": [
+						{
+							"name": "getAllProfesseurs",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/professeurs",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professeurs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getProfesseurById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/professeurs/41",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professeurs",
+										"41"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Etudiants",
+					"item": [
+						{
+							"name": "getEtudiantById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/etudiants/42",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"etudiants",
+										"42"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEtudiantsByPromotion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/etudiants/promotion/5",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"etudiants",
+										"promotion",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllEtudiants",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/etudiants",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"etudiants"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "allUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/admin/utilisateurs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"utilisateurs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/admin/utilisateurs/115",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"utilisateurs",
+								"115"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"Anta\",\r\n    \"prenom\": \"Gaye\",\r\n    \"telephone\": \"781241331\",\r\n    \"email\": \"anta.gaye@univ-thies.sn\",\r\n    \"role\": \"PROFESSEUR\", \r\n    // pour ajouter un professeur : specialite et matricule sont obligatoire et les champs qui concernent l'etudiant reste a null\r\n    \"specialite\" : \"Dev-Web\",\r\n    \"matricule\" : \"PROF011\",\r\n    // pour ajouter un etudiant\r\n    \"numeroDossier\" : null, \r\n    \"dateNaissance\" : null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/admin/utilisateurs/115",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"utilisateurs",
+								"115"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\" : \"Antou\",\r\n    \"prenom\" : \"Gaye\",\r\n    \"email\" : \"antou.gaye@univ-thies.sn\",\r\n    \"telephone\" : \"781241331\",\r\n    \"role\" : \"PROFESSEUR\", \r\n    \"password\" : \"Passer123\",\r\n    // pour ajouter un professeur : specialite et matricule sont obligatoire et les champs qui concernent l'etudiant reste a null\r\n    \"specialite\" : \"Dev-Web\",\r\n    \"matricule\" : \"PROF011\",\r\n    // pour ajouter un etudiant\r\n    \"numeroDossier\" : null, \r\n    \"dateNaissance\" : null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/admin/utilisateurs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"utilisateurs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/admin/utilisateurs/88",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"utilisateurs",
+								"88"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nom\" : \"mouhamad\",\r\n  \"prenom\" : \"gaye\",\r\n  \"email\" : \"mouhamad.gaye@gmail.com\",\r\n  \"telephone\" : \"+221784532082\",\r\n  \"password\" : \"Passer123\",\r\n  \"role\" : \"ETUDIANT\",\r\n  \"numeroDossier\" : \"2024MAS011\",\r\n  \"dateNaissance\" : \"2001-05-16\",\r\n  \"specialite\" : null,\r\n  \"matricule\" : null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\" : \"admin@univ-thies.sn\",\r\n  \"password\" : \"Passer123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Evaluation",
+			"item": [
+				{
+					"name": "getEvaluations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/evaluations",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"evaluations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEvaluationById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/evaluations/17",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"evaluations",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEvaluationsByCours",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/evaluations/cours/46",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"evaluations",
+								"cours",
+								"46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publierResultats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB1bml2LXRoaWVzLnNuIiwiaWF0IjoxNzU1MjkwNjk1LCJleHAiOjE3NTUzNzcwOTV9.Z8Z-30WktSWaNWJvJ94sqJFCkaR9BbOjJHUtD7O9i4E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/evaluations/17/publier",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"evaluations",
+								"17",
+								"publier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEvaluationsByFormation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/evaluations/formation/{formationId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"evaluations",
+								"formation",
+								"{formationId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8081",
+			"type": "default"
+		}
+	]
+}
