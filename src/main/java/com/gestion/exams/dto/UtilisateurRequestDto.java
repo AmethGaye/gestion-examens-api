@@ -1,6 +1,7 @@
 package com.gestion.exams.dto;
 
 import com.gestion.exams.entity.Role;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class UtilisateurRequestDto {
     @NotBlank(message = "Le telephone est obligatoire")
     private String telephone;
     @NotBlank(message = "L'email est obligatoire")
+    @Email
     private String email;
 
     private String password;
