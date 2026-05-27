@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: gestion_examens_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: passwd
+      MYSQL_DATABASE: gestion_examens
+    ports:
+      - "3316:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: gestion_examens_api
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: gestion_examens
+      DB_USER: root
+      DB_PASSWORD: passwd
+      JWT_SECRET: MaCleSecreteTresLonguePourJWT123456789!
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
