@@ -25,11 +25,11 @@ services:
     ports:
       - "8081:8081"
     environment:
-      DB_HOST: db
-      DB_PORT: 3306
-      DB_NAME: gestion_examens
-      DB_USER: root
-      DB_PASSWORD: passwd
+      MYSQLHOST: db
+      MYSQLPORT: 3306
+      MYSQLDATABASE: gestion_examens
+      MYSQLUSER: root
+      MYSQLPASSWORD: passwd
       JWT_SECRET: MaCleSecreteTresLonguePourJWT123456789!
     depends_on:
       db:
