@@ -17,8 +17,8 @@ import java.util.List;
 @Configuration
 public class SwaggerConfig {
 
-    @Value("${server.port:8081}")
-    private String serverPort;
+    @Value("${app.server.url:http://localhost:8081}")
+    private String serverUrl;
 
     @Bean
     public OpenAPI customOpenAPI() {
@@ -26,8 +26,8 @@ public class SwaggerConfig {
                 .info(apiInfo())
                 .servers(List.of(
                         new Server()
-                                .url("http://localhost:" + serverPort + "/api/v1")
-                                .description("Serveur de développement local")
+                                .url(serverUrl + "/api/v1")
+                                .description("Serveur actif")
                 ))
                 .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new Components()
