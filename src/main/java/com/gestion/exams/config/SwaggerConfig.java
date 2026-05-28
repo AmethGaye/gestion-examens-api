@@ -57,9 +57,9 @@ public class SwaggerConfig {
                     3. Ajoutez le token dans l'en-tête : `Authorization: Bearer <token>`
                     
                     **Comptes de test :**
-                    - Admin: admin@univ-thies.sn / passer123
-                    - Professeur: aminata.diop@univ-thies.sn / passer123
-                    - Étudiant: amadou.diop@univ-thies.sn / passer123
+                    - Admin: admin@univ-thies.sn / Passer123
+                    - Professeur: aminata.diop@univ-thies.sn / Passer123
+                    - Étudiant: amadou.diop@univ-thies.sn / Passer123
                     """)
                 .version("1.0.0")
                 .contact(new Contact()

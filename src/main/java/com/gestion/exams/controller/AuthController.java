@@ -119,19 +119,19 @@ public class AuthController {
                                         @ExampleObject(name = "Connexion Admin", value = """
                                                         {
                                                             "email" : "admin@univ-thies.sn",
-                                                             "password" : "passer123"
+                                                             "password" : "Passer123"
                                                         }
                                                         """),
                                         @ExampleObject(name = "Connexion Professeur", value = """
                                                         {
                                                             "email": "aminata.diop@univ-thies.sn",
-                                                            "password": "passer123"
+                                                            "password": "Passer123"
                                                         }
                                                         """),
                                         @ExampleObject(name = "Connexion Étudiant", value = """
                                                         {
                                                             "email": "amadou.diop@univ-thies.sn",
-                                                            "password": "passer123"
+                                                            "password": "Passer123"
                                                         }
                                                         """)
                         })) @RequestBody LoginRequest loginRequest) {
