@@ -19,7 +19,7 @@ Cette application permet la gestion complète des examens universitaires, inclua
 
 ### 1. Cloner le projet
 ```bash
-git clone [url-du-projet]
+git clone https://github.com/AmethGaye/gestion-examens-api
 cd gestion-examens
 ```
 
